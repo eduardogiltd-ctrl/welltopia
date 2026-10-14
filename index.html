@@ -28,7 +28,7 @@ body { background: var(--sky); color: var(--cloud); font-family: var(--font); -w
 .stage { position: relative; min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; isolation: isolate; }
 .stage > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% 35%; z-index: -2; }
 .stage::after { content: ""; position: absolute; inset: 0; z-index: -1;
-  background: radial-gradient(ellipse 55% 60% at 24% 52%, rgba(16,24,32,.30), rgba(16,24,32,.06) 72%); }
+  background: radial-gradient(ellipse 60% 55% at 50% 52%, rgba(16,24,32,.30), rgba(16,24,32,.06) 72%); }
 
 .gutter { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
 
@@ -39,12 +39,7 @@ header .logo { grid-column: 2; width: clamp(150px, 15vw, 210px); height: auto; d
 .about-btn:focus-visible, .close:focus-visible { outline: 2px solid var(--cloud); outline-offset: 4px; }
 
 .hero { display: grid; place-items: center; text-align: center; padding-block: 24px 48px; }
-.hero .inner { display: grid; justify-items: center; gap: 18px; width: min(100%, 640px); }
-@media (min-width: 701px) {
-  /* the dancer fills the right ~60% of the photo: set the text in the empty wall on the left */
-  .hero { justify-items: start; }
-  .hero .inner { width: auto; max-width: 46vw; margin-left: 4vw; }
-}
+.hero .inner { display: grid; justify-items: center; gap: 18px; width: min(100%, 760px); }
 h1 { margin: 0; font-weight: 500; font-size: clamp(54px, 7vw, 116px); line-height: .95; letter-spacing: -0.015em; white-space: nowrap; }
 .tagline { margin: 0; font-weight: 300; font-style: italic; font-size: clamp(18px, 2vw, 26px); }
 

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WELLTOPIA · Coming soon</title>
+<meta name="description" content="WELLTOPIA. Grip socks, yoga and Pilates essentials. Coming soon. Every movement brings you closer.">
+<meta property="og:title" content="WELLTOPIA · Coming soon">
+<meta property="og:description" content="every movement brings you closer">
+<meta property="og:image" content="img/girl.jpg">
+<meta name="theme-color" content="#a9b2c6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-20 -45 193 193'%3E%3Crect x='-20' y='-45' width='193' height='193' rx='40' fill='%23F04E98'/%3E%3Cpath fill='%23F0EEE9' d='M144.27 1.77H144.13C140.48 1.77 137.23 4.04 135.97 7.45L108.42 81.93C107.39 84.43 105.47 86.05 102.81 86.05C99.86 86.05 97.79 83.84 97.79 80.45V21.66C97.79 8.7 90.27 0 75.67 0C62.54 0 56.05 7.08 52.22 18.43L28.03 81.93C27 84.44 25.08 86.06 22.57 86.06C19.47 86.06 17.4 83.85 17.4 80.46V10.79C17.4 6.35 14.2 2.37 9.79 1.83C4.49 1.19 0 5.3 0 10.46V81.18C0 94.29 7.23 102.99 22.13 102.99C35.39 102.99 41.74 95.92 45.43 84.57L69.62 21.07C70.65 18.57 72.57 16.8 75.22 16.8C78.18 16.8 80.39 19.01 80.39 22.55V81.19C80.39 94.3 87.62 103 102.37 103C115.64 103 121.99 95.93 125.97 84.58L152.43 13.49C154.54 7.81 150.34 1.77 144.28 1.77Z'/%3E%3C/svg%3E">
+<style>
+/* Layout: one screen, as in the brand guide's landing preview — full-bleed photo, wordmark top centre, About top right, "Coming soon" + tagline + Sign up centred; About opens a Pink panel. Single committed look. */
+:root {
+  --pink: #F04E98;
+  --pink-hover: #e43c8b;
+  --black: #101820;
+  --cloud: #F0EEE9;
+  --sky: #a9b2c6;   /* the photo's wall tone, shown while it loads */
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--sky); color: var(--cloud); font-family: var(--font); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+.stage { position: relative; min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; isolation: isolate; }
+.stage > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 22% 35%; z-index: -2; }
+.stage::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse 55% 60% at 76% 52%, rgba(16,24,32,.30), rgba(16,24,32,.06) 72%); }
+
+.gutter { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+
+header { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding-block: 28px; }
+header .logo { grid-column: 2; width: clamp(150px, 15vw, 210px); height: auto; display: block; fill: var(--cloud); }
+.about-btn { grid-column: 3; justify-self: end; display: inline-flex; align-items: center; gap: 10px; background: none; border: 0; color: var(--cloud); font: inherit; font-size: 15px; cursor: pointer; padding: 6px 2px; }
+.about-btn svg { width: 12px; height: 12px; }
+.about-btn:focus-visible, .close:focus-visible { outline: 2px solid var(--cloud); outline-offset: 4px; }
+
+.hero { display: grid; place-items: center; text-align: center; padding-block: 24px 48px; }
+.hero .inner { display: grid; justify-items: center; gap: 18px; width: min(100%, 640px); }
+@media (min-width: 701px) {
+  /* the dancer fills the left ~60% of the photo: set the text in the empty wall on the right */
+  .hero { justify-items: end; }
+  .hero .inner { width: auto; max-width: 46vw; margin-right: 4vw; }
+}
+h1 { margin: 0; font-weight: 500; font-size: clamp(54px, 7vw, 116px); line-height: .95; letter-spacing: -0.015em; white-space: nowrap; }
+.tagline { margin: 0; font-weight: 300; font-style: italic; font-size: clamp(18px, 2vw, 26px); }
+
+form { margin-top: 18px; display: flex; gap: 8px; width: min(100%, 440px); padding: 6px; border-radius: 999px; background: rgba(240,238,233,.16); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(240,238,233,.55); }
+form input { flex: 1; min-width: 0; height: 46px; padding: 0 18px; border: 0; background: transparent; color: var(--cloud); font: inherit; font-size: 16px; }
+form input::placeholder { color: rgba(240,238,233,.8); }
+form input:focus { outline: none; }
+form:focus-within { border-color: var(--cloud); }
+.btn { flex: none; height: 46px; padding: 0 28px; border: 0; border-radius: 999px; background: var(--pink); color: var(--cloud); font: inherit; font-size: 16px; font-weight: 500; cursor: pointer; transition: background .15s ease; }
+.btn:hover { background: var(--pink-hover); }
+.btn:focus-visible { outline: 2px solid var(--cloud); outline-offset: 3px; }
+.error { margin: 0; font-size: 14px; min-height: 1.2em; }
+.thanks { margin-top: 18px; font-size: 18px; font-weight: 500; }
+
+footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 18px calc(18px + env(safe-area-inset-bottom, 0px)); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .85; }
+
+/* About panel */
+.panel { position: fixed; top: 0; right: 0; bottom: 0; width: min(560px, 100%); background: var(--pink); color: var(--cloud); z-index: 10;
+  padding: calc(28px + env(safe-area-inset-top, 0px)) max(32px, env(safe-area-inset-right, 0px)) calc(32px + env(safe-area-inset-bottom, 0px)) 40px;
+  display: grid; grid-template-rows: auto 1fr; gap: 40px; overflow-y: auto; transform: translateX(100%); transition: transform .45s cubic-bezier(.2,.7,.2,1); visibility: hidden; }
+.panel.open { transform: none; visibility: visible; }
+.panel .bar { display: flex; justify-content: space-between; align-items: center; }
+.panel .bar span { font-size: 15px; }
+.close { background: none; border: 0; color: var(--cloud); font: inherit; font-size: 15px; cursor: pointer; padding: 6px 2px; display: inline-flex; align-items: center; gap: 10px; }
+.close svg { width: 12px; height: 12px; }
+.panel .copy { align-self: center; display: grid; gap: 22px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.5; max-width: 34ch; }
+.panel .copy p { margin: 0; }
+.panel .copy .lead { font-size: clamp(24px, 2.4vw, 32px); line-height: 1.2; font-weight: 500; }
+.panel .copy .tag { font-weight: 300; font-style: italic; }
+.scrim { position: fixed; inset: 0; background: rgba(16,24,32,.25); z-index: 9; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.scrim.open { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 700px) {
+  .stage > img { object-position: 30% 40%; }
+  .stage::after { background: linear-gradient(180deg, rgba(16,24,32,.10), rgba(16,24,32,.32) 55%, rgba(16,24,32,.40)); }
+  header { padding-block: 20px; }
+  .hero { align-items: end; padding-block: 0 36px; }
+  .hero .inner { transform: none; }
+  footer { justify-content: center; text-align: center; }
+  .panel { padding-left: max(28px, env(safe-area-inset-left, 0px)); }
+}
+@media (max-width: 380px) {
+  form { flex-direction: column; border-radius: 26px; }
+  .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .panel, .scrim { transition: none; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="wordmark" viewBox="0 0 859 103">
+      <path d="M144.27 1.77003H144.126C140.481 1.77003 137.226 4.03654 135.965 7.44708L108.415 81.9251C107.385 84.4291 105.469 86.048 102.811 86.048C99.8581 86.048 97.7909 83.8391 97.7909 80.4501V21.6649C97.7909 8.69906 90.2713 0 75.6715 0C62.541 0 56.0513 7.08013 52.2195 18.427L28.0257 81.9323C26.9957 84.4363 25.0798 86.0552 22.566 86.0552C19.4689 86.0552 17.4017 83.8462 17.4017 80.4573V10.7929C17.4017 6.34621 14.2037 2.37443 9.78846 1.83479C4.49448 1.19441 0 5.3029 0 10.4619V81.184C0 94.2937 7.2315 102.993 22.1267 102.993C35.394 102.993 41.7396 95.9199 45.4274 84.573L69.6212 21.0749C70.6512 18.5709 72.5743 16.8009 75.2249 16.8009C78.178 16.8009 80.3892 19.0098 80.3892 22.5499V81.1912C80.3892 94.3009 87.6207 103 102.365 103C115.639 103 121.985 95.9271 125.968 84.5802L152.431 13.4911C154.541 7.81404 150.342 1.77003 144.277 1.77003H144.27Z"/>
+      <path d="M237.083 1.76953H207.285C178.374 1.76953 162.305 18.1243 162.305 51.5751C162.305 85.0258 178.23 101.229 207.285 101.229H237.083C241.887 101.229 245.784 97.3368 245.784 92.5376C245.784 87.7384 241.887 83.8457 237.083 83.8457H207.285C190.626 83.8457 182.213 76.7009 180.203 60.195H235.506C240.195 60.195 244.005 56.3023 244.005 51.5031C244.005 46.7039 240.202 42.8112 235.506 42.8112H180.225C182.285 26.2766 190.784 19.1604 207.285 19.1604H237.083C241.887 19.1604 245.784 15.2678 245.784 10.4686C245.784 5.66936 241.887 1.77673 237.083 1.77673V1.76953Z"/>
+      <path d="M333.276 83.8462H303.334C287.704 83.8462 282.979 76.3272 282.979 66.7503V8.83577C282.979 4.10129 279.248 0 274.502 0C269.589 0 265.57 3.81348 265.57 8.69186V66.8942C265.57 86.7891 275.899 101.223 302.297 101.223H333.268C338.073 101.223 341.969 97.3301 341.969 92.5309C341.969 87.7317 338.073 83.8391 333.268 83.8391L333.276 83.8462Z"/>
+      <path d="M416.682 83.8462H386.741C371.111 83.8462 366.386 76.3272 366.386 66.7503V8.69186C366.386 3.89263 362.489 0 357.685 0C352.881 0 348.984 3.89263 348.984 8.69186V66.8942C348.984 86.7891 359.313 101.223 385.711 101.223H416.682C421.487 101.223 425.383 97.3301 425.383 92.5309C425.383 87.7317 421.487 83.8391 416.682 83.8391V83.8462Z"/>
+      <path d="M483.525 1.76953H425.256C420.451 1.76953 416.555 5.66216 416.555 10.4614C416.555 15.2606 420.451 19.1533 425.256 19.1533H436.693C441.62 19.1533 445.61 23.1394 445.61 28.061V94.3076C445.61 99.1069 449.507 102.999 454.311 102.999H454.462C459.267 102.999 463.163 99.1069 463.163 94.3076V28.061C463.163 23.1394 467.154 19.1533 472.08 19.1533H483.525C488.329 19.1533 492.226 15.2606 492.226 10.4614C492.226 5.66216 488.329 1.76953 483.525 1.76953Z"/>
+      <path d="M554.952 1.76953H546.957C518.046 1.76953 501.977 18.2754 501.977 51.719C501.977 85.1625 517.902 101.229 546.957 101.229H554.952C584.008 101.229 599.94 85.0186 599.94 51.719C599.94 18.4193 583.864 1.76953 554.952 1.76953ZM554.952 83.8457H546.957C527.64 83.8457 519.378 74.4128 519.378 51.719C519.378 29.0251 527.784 19.1533 546.957 19.1533H554.952C574.126 19.1533 582.387 28.8812 582.387 51.5751C582.387 74.2689 574.126 83.8457 554.952 83.8457Z"/>
+      <path d="M671.22 1.76891H628.89C624.626 1.76891 620.348 4.76933 620.348 8.87782V94.1991C620.348 98.6458 624.583 102.992 629.034 102.992C634.364 102.992 637.735 99.3581 637.735 94.1991V65.267C637.735 63.497 638.621 62.7631 640.249 62.7631H671.22C694.528 62.7631 703.229 46.5593 703.229 31.5285C703.229 15.6126 693.642 1.76172 671.22 1.76172V1.76891ZM671.811 46.1204H637.735V19.1598H671.962C681.405 19.1598 685.676 25.2038 685.676 32.4207C685.676 39.6375 681.693 46.1204 671.811 46.1204Z"/>
+      <path d="M727.869 0.454042C724.261 1.62687 721.941 5.14534 721.941 8.93724V94.0714C721.941 97.8633 724.261 101.382 727.869 102.555C733.855 104.497 739.343 99.806 739.343 94.1074V8.90126C739.343 3.20263 733.855 -1.48868 727.869 0.454042Z"/>
+      <path d="M858.408 90.9336L829.374 12.8291C825.83 3.54006 819.052 0 808.724 0C798.395 0 791.466 3.54006 787.778 12.8219L757.635 90.8184C755.2 96.9848 760.127 103.691 766.977 102.935C770.304 102.568 773.092 100.215 774.316 97.0999L803.559 21.2116C804.589 18.8516 806.217 17.8226 808.572 17.8226C810.928 17.8226 812.555 18.8516 813.441 21.2116L841.503 97.2294C842.814 100.698 846.134 102.986 849.844 102.986H850.074C856.312 102.986 860.626 96.7473 858.408 90.9192V90.9336Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="stage">
+  <img src="img/girl.jpg" alt="" width="2400" height="1350" fetchpriority="high">
+
+  <header class="gutter">
+    <svg class="logo" viewBox="0 0 859 103" role="img" aria-label="WELLTOPIA"><use href="#wordmark"/></svg>
+    <button class="about-btn" id="about-open" type="button" aria-expanded="false" aria-controls="about">
+      <svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.4"/><circle cx="6" cy="6" r="1.8" fill="currentColor"/></svg>
+      About
+    </button>
+  </header>
+
+  <main class="hero gutter">
+    <div class="inner">
+      <h1>Coming soon</h1>
+      <p class="tagline">every movement brings you closer</p>
+      <form id="signup" novalidate>
+        <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+        <input id="email" name="email" type="email" placeholder="Your email" autocomplete="email" inputmode="email" required>
+        <button class="btn" type="submit">Sign up</button>
+      </form>
+      <p class="error" id="error" role="alert"></p>
+      <p class="thanks" id="thanks" role="status" hidden>Thank you. We’ll be in touch when the first drop lands.</p>
+    </div>
+  </main>
+
+  <footer class="gutter">
+    <span>shopwelltopia.com</span>
+    <span>© 2026 WELLTOPIA</span>
+  </footer>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="about" aria-label="About WELLTOPIA" aria-hidden="true">
+  <div class="bar">
+    <span>About</span>
+    <button class="close" id="about-close" type="button">
+      <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 1 L11 11 M11 1 L1 11" stroke="currentColor" stroke-width="1.4"/></svg>
+      Close
+    </button>
+  </div>
+  <div class="copy">
+    <p class="lead">Welltopia is a state of mind, an inner sanctuary we help you find.</p>
+    <p>Every product we create is intentionally crafted to guide you there.</p>
+    <p>From the grounding touch of our yoga mats to the endorphin surge from our equipment and the empowerment woven into our athleisure, <span class="tag">every movement brings you closer.</span></p>
+    <p>We are the vessel for reaching your welltopia.</p>
+  </div>
+</aside>
+
+<script>
+(function () {
+  var form = document.getElementById('signup');
+  var input = document.getElementById('email');
+  var error = document.getElementById('error');
+  var thanks = document.getElementById('thanks');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+      error.textContent = 'Enter an email address, like name@example.com';
+      input.focus();
+      return;
+    }
+    error.textContent = '';
+    form.hidden = true;
+    thanks.hidden = false;
+  });
+  input.addEventListener('input', function () { error.textContent = ''; });
+
+  var panel = document.getElementById('about');
+  var scrim = document.getElementById('scrim');
+  var openBtn = document.getElementById('about-open');
+  var closeBtn = document.getElementById('about-close');
+  function setOpen(open) {
+    panel.classList.toggle('open', open);
+    scrim.classList.toggle('open', open);
+    panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    (open ? closeBtn : openBtn).focus();
+  }
+  openBtn.addEventListener('click', function () { setOpen(true); });
+  closeBtn.addEventListener('click', function () { setOpen(false); });
+  scrim.addEventListener('click', function () { setOpen(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && panel.classList.contains('open')) setOpen(false); });
+})();
+</script>
+</body>
+</html>

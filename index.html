@@ -44,7 +44,13 @@ h1 { margin: 0; font-weight: 500; font-size: clamp(54px, 7vw, 116px); line-heigh
 .tagline { margin: 0; font-weight: 300; font-style: italic; font-size: clamp(18px, 2vw, 26px); }
 
 form { margin-top: 18px; display: flex; gap: 8px; width: min(100%, 440px); padding: 6px; border-radius: 999px; background: rgba(240,238,233,.16); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(240,238,233,.55); }
-form input { flex: 1; min-width: 0; height: 46px; padding: 0 18px; border: 0; background: transparent; color: var(--cloud); font: inherit; font-size: 16px; }
+form input { flex: 1; min-width: 0; height: 46px; padding: 0 18px; border: 0; border-radius: 999px; background: transparent; color: var(--cloud); font: inherit; font-size: 16px; }
+/* browser autofill: keep the pill transparent and the text Cloud Dancer instead of the default light-blue box */
+form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--cloud); caret-color: var(--cloud);
+  -webkit-box-shadow: 0 0 0 1000px transparent inset; box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 600000s 0s, color 600000s 0s; }
+form input:autofill { background: transparent; }
 form input::placeholder { color: rgba(240,238,233,.8); }
 form input:focus { outline: none; }
 form:focus-within { border-color: var(--cloud); }
